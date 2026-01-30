@@ -315,7 +315,13 @@ simplifyGOFromMultipleLists = function(lt, go_id_column = NULL,
 				heatmap_legend_param = heatmap_legend_param,
 				width = unit(0.5, "cm")*n, use_raster = TRUE,
 				left_annotation = rowAnnotation(
-					empty = anno_block(width = unit(1.2, "cm"), panel_fun = function(index) grid.text(qq("Number of significant GO terms in each cluster (padj < @{padj_cutoff})"), unit(0, "npc"), 0.5, just = "top", rot = 90, gp = gpar(fontsize = 10))),
+					empty = anno_block(width = unit(1.2, "cm"), panel_fun = function(index) {
+						if(identical(heatmap_legend_param$labels[1], "not available")) {
+							grid.text(qq("Number of GO terms in each cluster"), unit(0, "npc"), 0.5, just = "top", rot = 90, gp = gpar(fontsize = 10))
+						} else {
+							grid.text(qq("Number of significant GO terms in each cluster (padj < @{padj_cutoff})"), unit(0, "npc"), 0.5, just = "top", rot = 90, gp = gpar(fontsize = 10))
+						}
+					}),
 					bar = anno_link(
 						align_to = align_to, side = "left", gap = unit(3, "mm"),
 						link_gp = gpar(fill = "#DDDDDD", col = "#AAAAAA"), internal_line = FALSE,

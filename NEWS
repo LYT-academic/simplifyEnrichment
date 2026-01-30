@@ -1,3 +1,9 @@
+CHANGES in VERSION 2.1.0
+
+* `simplifyGOFromMultipleLists()`: fixed a bug of the left row title when 
+  the input is a list of GO ID vectors.
+----------------------------
+
 CHANGES in VERSION 2.0.0
 
 * use **simona** for semantic similarity calculation
