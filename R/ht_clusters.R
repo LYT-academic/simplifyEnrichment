@@ -113,6 +113,7 @@ ht_clusters = function(
 			name = "Similarity", column_title = column_title,
 			show_row_names = FALSE, show_column_names = FALSE,
 			show_row_dend = FALSE, show_column_dend = FALSE,
+			width = unit(ncol(mat) * 0.04, "cm"),
 			row_order = od2, column_order = od2,
 			border = "#404040", row_title = NULL,
 			use_raster = use_raster) + NULL
