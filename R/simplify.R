@@ -310,7 +310,7 @@ simplifyGOFromMultipleLists = function(lt, go_id_column = NULL,
 			max = max(s)
 			by = diff(grid.pretty(c(0, max)))[1]
 			Heatmap(mm, col = col, name = if(name == "") NULL else name,
-				show_row_names = FALSE, cluster_columns = FALSE,
+				show_row_names = FALSE, cluster_columns = FALSE,column_names_max_height = unit(10, "cm"),
 				border = "black",
 				heatmap_legend_param = heatmap_legend_param,
 				width = unit(0.5, "cm")*n, use_raster = TRUE,
